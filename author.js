@@ -14,6 +14,13 @@ var logger = {
 }
 
 var book = {};
+
+function parseSounds(soundsManifest) {
+}
+
+function parsePages(pagesManifest) {	
+}
+
 function parseBook(bookManifest) {
 	logger.debug('================================');
 	logger.debug(JSON.stringify(bookManifest));
@@ -21,6 +28,9 @@ function parseBook(bookManifest) {
 
 	book.title = bookManifest.title;
 	logger.info(book.title);
+
+	parseSounds(bookManifest.sounds);
+	parsePages(bookManifest.pages);
 }
 
 var manifestFileName = process.argv[2];
