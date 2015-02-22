@@ -1,0 +1,19 @@
+{
+  "name": "wokanabook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "author.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gautama/wokanabook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gautama/wokanabook/issues"
+  },
+  "homepage": "https://github.com/gautama/wokanabook"
+}
