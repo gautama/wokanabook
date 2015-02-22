@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gautama/wokanabook",
   "dependencies": {
-            "underscore": "1.8.1"
-        }
+    "express": "^4.11.2",
+    "underscore": "1.8.1"
+  }
 }
