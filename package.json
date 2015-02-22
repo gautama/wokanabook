@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gautama/wokanabook/issues"
   },
-  "homepage": "https://github.com/gautama/wokanabook"
+  "homepage": "https://github.com/gautama/wokanabook",
+  "dependencies": {
+            "underscore": "1.8.1"
+        }
 }
