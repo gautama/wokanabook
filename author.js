@@ -8,12 +8,21 @@ var logger = {
 	debug: function(message) {
 		// console.log(message);
 	},
+	verbose: function(message) {
+		console.log(message);
+	},
 	error: function(message) {
 		console.log(message);
 	}
 }
 
-var book = {};
+var AUTHOR = {
+	bookModel: undefined
+}
+
+function parseTitle(title) {
+	logger.verbose('title: ' + AUTHOR.bookModel.title);
+}
 
 function parseSounds(soundsManifest) {
 }
@@ -22,19 +31,17 @@ function parsePages(pagesManifest) {
 }
 
 function parseBook(bookManifest) {
-	logger.debug('================================');
-	logger.debug(JSON.stringify(bookManifest));
-	logger.debug('================================');
+	console.log('reading bookManifest=' + bookManifest, 'utf-8');
+	AUTHOR.bookModel = JSON.parse(fs.readFileSync(bookManifest));
 
-	book.title = bookManifest.title;
-	logger.info(book.title);
-
-	parseSounds(bookManifest.sounds);
-	parsePages(bookManifest.pages);
+	logger.debug('================================');
+	logger.debug(JSON.stringify(AUTHOR.bookModel));
+	logger.debug('================================');
 }
 
-var manifestFileName = process.argv[2];
-console.log('reading manifestFile=' + manifestFileName, 'utf-8');
-var bookManifest = JSON.parse(fs.readFileSync(manifestFileName));
-
+var bookManifest = process.argv[2];
 parseBook(bookManifest);
+
+
+
+
