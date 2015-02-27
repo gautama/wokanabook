@@ -1,0 +1,6014 @@
+{
+  "title": "Siphiwe the storyteller",
+  "sounds": [
+    {
+      "name": "part1music",
+      "type": "music",
+      "fileName": "part1music",
+      "fileType": "mp3",
+      "loopCount": "-1",
+      "volume": "0.7"
+    },
+    {
+      "name": "part2music",
+      "type": "music",
+      "fileName": "part2music",
+      "fileType": "mp3",
+      "loopCount": "-1",
+      "volume": "0.7"
+    },
+    {
+      "name": "part3music",
+      "type": "music",
+      "fileName": "part3music",
+      "fileType": "mp3",
+      "loopCount": "-1",
+      "volume": "0.7"
+    },
+    {
+      "name": "pageturn",
+      "type": "music",
+      "fileName": "pageturn",
+      "fileType": "mp3",
+      "loopCount": "1"
+    }
+  ],
+  "pages": [
+    {
+      "text": "cover",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s2_p0_l1_background",
+          "fileName": "s2_p0_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "play_part1_music",
+                      "type": "SoundActionData",
+                      "soundName": "part1music",
+                      "stop": "false"
+                    },
+                    {
+                      "name": "stop_part2_music",
+                      "type": "SoundActionData",
+                      "soundName": "part2music",
+                      "stop": "true"
+                    },
+                    {
+                      "name": "stop_part3_music",
+                      "type": "SoundActionData",
+                      "soundName": "part3music",
+                      "stop": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_l5_border",
+          "fileName": "s2_p0_l5_border.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_t_texture",
+          "fileName": "s2_t_texture.atlas",
+          "numFrames": "1",
+          "alpha": "0.3",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_l8_buttonshadow",
+          "fileName": "s2_p0_l8_buttonshadow.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_l9_readtome",
+          "fileName": "s2_p0_l9_readtome.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "305",
+                  "originY": "70",
+                  "widthW": "155",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readtome_touchresponse",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "s2_p0_l9_readtome_invisible",
+                          "type": "VisibilityActionData",
+                          "visible": "false"
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_wait",
+                          "type": "WaitForDurationActionData",
+                          "duration": "0.25"
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_visible",
+                          "type": "VisibilityActionData",
+                          "visible": "true"
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_setreadingmode",
+                          "type": "SetReadingModeActionData",
+                          "readingMode": "readingModeNarrator"
+                        },
+                        {
+                          "name": "play_pageturn_sequence",
+                          "type": "SequenceActionData",
+                          "actions": [
+                            {
+                              "name": "stop_pageturn",
+                              "type": "SoundActionData",
+                              "soundName": "pageturn",
+                              "stop": "true"
+                            },
+                            {
+                              "name": "play_pageturn",
+                              "type": "SoundActionData",
+                              "soundName": "pageturn",
+                              "stop": "false"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_pageforward",
+                          "type": "MoveToNextPageActionData"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m10_readbymyself",
+          "fileName": "s2_p0_m10_readbymyself.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readbymyself_visible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "495",
+                  "originY": "70",
+                  "widthW": "155",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readbymyself_touchresponse",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "s2_p0_l9_readbymyself_invisible",
+                          "type": "VisibilityActionData",
+                          "visible": "false"
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyself_wait",
+                          "type": "WaitForDurationActionData",
+                          "duration": "0.25"
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyself_visible",
+                          "type": "VisibilityActionData",
+                          "visible": "true"
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyself_setreadingmode",
+                          "type": "SetReadingModeActionData",
+                          "readingMode": "readingModeSelf"
+                        },
+                        {
+                          "name": "play_pageturn_sequence",
+                          "type": "SequenceActionData",
+                          "actions": [
+                            {
+                              "name": "stop_pageturn",
+                              "type": "SoundActionData",
+                              "soundName": "pageturn",
+                              "stop": "true"
+                            },
+                            {
+                              "name": "play_pageturn",
+                              "type": "SoundActionData",
+                              "soundName": "pageturn",
+                              "stop": "false"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyself_pageforward",
+                          "type": "MoveToNextPageActionData"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m11_musicoff",
+          "fileName": "s2_p0_m11_musicoff.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m13_readtomepressed",
+          "fileName": "s2_p0_m13_readtomepressed.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "false"
+                    }
+                  ]
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "305",
+                  "originY": "70",
+                  "widthW": "155",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readtomepressed_touchresponse",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "s2_p0_l9_readtome_invisible",
+                          "type": "VisibilityActionData",
+                          "visible": "true"
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_wait",
+                          "type": "WaitForDurationActionData",
+                          "duration": "0.25"
+                        },
+                        {
+                          "name": "s2_p0_l9_readtome_visible",
+                          "type": "VisibilityActionData",
+                          "visible": "false"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m14_readbymyselfpressed",
+          "fileName": "s2_p0_m14_readbymyselfpressed.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readbymyselfpressed_invisible",
+                      "type": "VisibilityActionData",
+                      "visible": "false"
+                    }
+                  ]
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "495",
+                  "originY": "70",
+                  "widthW": "155",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "s2_p0_l9_readbymyselfpressed_touchresponse",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "s2_p0_l9_readbymyselfpressed_visible",
+                          "type": "VisibilityActionData",
+                          "visible": "true"
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyselfpressed_wait",
+                          "type": "WaitForDurationActionData",
+                          "duration": "0.25"
+                        },
+                        {
+                          "name": "s2_p0_l9_readbymyselfpressed_invisible",
+                          "type": "VisibilityActionData",
+                          "visible": "false"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m15_musicpressed",
+          "fileName": "s2_p0_m15_musicpressed.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s2_p0_m19_musicon",
+          "fileName": "s2_p0_m19_musicon.atlas",
+          "numFrames": "1",
+          "alpha": "0.9",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "musiconinonstate",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "musiconinonstate",
+              "events": [
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "musiconinoffstate",
+                  "originX": "705",
+                  "originY": "70",
+                  "widthW": "88",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "false"
+                    },
+                    {
+                      "name": "turnmusicoff",
+                      "type": "SetBackgroundMusicModeActionData",
+                      "backgroundMusicOn": "false"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "musiconinoffstate",
+              "events": [
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "musiconinonstate",
+                  "originX": "705",
+                  "originY": "70",
+                  "widthW": "88",
+                  "heightH": "88",
+                  "actions": [
+                    {
+                      "name": "makevisible",
+                      "type": "VisibilityActionData",
+                      "visible": "true"
+                    },
+                    {
+                      "name": "turnmusicon_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "turnmusicon",
+                          "type": "SetBackgroundMusicModeActionData",
+                          "backgroundMusicOn": "true"
+                        },
+                        {
+                          "name": "play_part1_music",
+                          "type": "SoundActionData",
+                          "soundName": "part1music",
+                          "stop": "false"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page1",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l1_background",
+          "fileName": "s3_p1_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l2_shimmer",
+          "fileName": "s3_p1_l2_shimmer.atlas",
+          "numFrames": "7",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p1_l2_shimmerrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p1_l2_shimmeranimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l3_monkey",
+          "fileName": "s3_p1_l3_monkey.atlas",
+          "numFrames": "13",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p1_l3_monkeyrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p1_l3_monkeyanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l4_foreground",
+          "fileName": "s3_p1_l4_foreground.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l5_text",
+          "fileName": "s3_p1_l5_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l6_vine",
+          "fileName": "s3_p1_l6_vine.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p1_l6_vinerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p1_l6_vineanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p1_l7_leaf",
+          "fileName": "s3_p1_l7_leaf.atlas",
+          "numFrames": "3",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p1_l7_leafrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p1_l7_leafanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page2",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p2_l1_background",
+          "fileName": "s3_p2_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p2_l2_monkey",
+          "fileName": "s3_p2_l2_monkey.atlas",
+          "numFrames": "12",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p2_l2_monkeyrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p2_l2_monkeyanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p2_l3_foreground",
+          "fileName": "s3_p2_l3_foreground.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p2_l4_text",
+          "fileName": "s3_p2_l4_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page3",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l1_background",
+          "fileName": "s3_p3_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l2_shimmer",
+          "fileName": "s3_p3_l2_shimmer.atlas",
+          "numFrames": "7",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p3_l2_shimmerrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p3_l2_shimmeranimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l3_smoke",
+          "fileName": "s3_p3_l3_smoke.atlas",
+          "numFrames": "6",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p3_l3_smokerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p3_l3_smokeanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l4_foreground",
+          "fileName": "s3_p3_l4_foreground.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l5_monkey",
+          "fileName": "s3_p3_l5_monkey.atlas",
+          "numFrames": "6",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p3_l5_monkeyrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "1",
+                      "action": {
+                        "name": "s3_p3_l5_monkeyanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2",
+                        "restore": "false"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p3_l6_text",
+          "fileName": "s3_p3_l6_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page4",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l1_background",
+          "fileName": "s3_p4_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l2_trees",
+          "fileName": "s3_p4_l2_trees.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p4_l2_treesrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p4_l2_treesanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l3_siphiwe",
+          "fileName": "s3_p4_l3_siphiwe.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l4_fire",
+          "fileName": "s3_p4_l4_fire.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p4_l4_firerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p4_l4_fireanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l5_people",
+          "fileName": "s3_p4_l5_people.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p4_l5_peoplerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p4_l5_peopleanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p4_l6_text",
+          "fileName": "s3_p4_l6_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page5",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l1_background",
+          "fileName": "s3_p5_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l2_women",
+          "fileName": "s3_p5_l2_women.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l3_motherwithbaby",
+          "fileName": "s3_p5_l3_motherwithbaby.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p5_l3_motherwithbabyrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p5_l3_motherwithbabyanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l4_fire",
+          "fileName": "s3_p5_l4_fire.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p5_l4_firerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p5_l4_fireanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l5_siphiwestill",
+          "fileName": "s3_p5_l5_siphiwestill.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p5_l5_siphiwestillrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p5_l5_siphiwestillanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l6_siphiwetalk",
+          "fileName": "s3_p5_l6_siphiwetalk.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p5_l6_siphiwetalkrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p5_l6_siphiwetalkanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l7_foregroundpeople",
+          "fileName": "s3_p5_l7_foregroundpeople.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p5_l7_foregroundpeoplerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p5_l7_foregroundpeopleanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p5_l8_text",
+          "fileName": "s3_p5_l8_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page6",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l1_background",
+          "fileName": "s3_p6_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l2_smoke",
+          "fileName": "s3_p6_l2_smoke.atlas",
+          "numFrames": "6",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p6_l2_smokerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p6_l2_smokeanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l3_huts",
+          "fileName": "s3_p6_l3_huts.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l4_villager",
+          "fileName": "s3_p6_l4_villager.atlas",
+          "numFrames": "35",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p6_l4_villagerrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p6_l4_villageranimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l5_foreground",
+          "fileName": "s3_p6_l5_foreground.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l6_siphiwe",
+          "fileName": "s3_p6_l6_siphiwe.atlas",
+          "numFrames": "13",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p6_l6_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p6_l6_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l7_stars",
+          "fileName": "s3_p6_l7_stars.atlas",
+          "numFrames": "15",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p6_l7_starsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p6_l7_starsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l8_text",
+          "fileName": "s3_p6_l8_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p6_l9_blink",
+          "fileName": "s3_p6_l9_blink.atlas",
+          "numFrames": "3",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p6_l9_blinkrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p6_l9_blinkanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page7",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p7_l1_background",
+          "fileName": "s3_p7_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p7_l2_siphiwe",
+          "fileName": "s3_p7_l2_siphiwe.atlas",
+          "numFrames": "24",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p7_l2_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p7_l2_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p7_l3_stars",
+          "fileName": "s3_p7_l3_stars.atlas",
+          "numFrames": "15",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p7_l3_starsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p7_l3_starsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p7_l4_staff",
+          "fileName": "s3_p7_l4_staff.atlas",
+          "numFrames": "39",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p7_l4_staffrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p7_l4_staffanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p7_l5_text",
+          "fileName": "s3_p7_l5_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page8",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l1_background",
+          "fileName": "s3_p8_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l2_startwinkle",
+          "fileName": "s3_p8_l2_startwinkle.atlas",
+          "numFrames": "29",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l2_startwinklerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l2_startwinkleanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l3_siphiwe",
+          "fileName": "s3_p8_l3_siphiwe.atlas",
+          "numFrames": "9",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l3_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l3_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l4_starjoindots",
+          "fileName": "s3_p8_l4_starjoindots.atlas",
+          "numFrames": "38",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l4_starjoindotsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l4_starjoindotsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l5_hippoappears",
+          "fileName": "s3_p8_l5_hippoappears.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l5_hippoappearsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l5_hippoappearsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l6_siphiwesmile",
+          "fileName": "s3_p8_l6_siphiwesmile.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l6_siphiwesmilerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l6_siphiwesmileanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l7_text",
+          "fileName": "s3_p8_l7_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p8_l8_blinks",
+          "fileName": "s3_p8_l8_blinks.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p8_l8_blinksrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p8_l8_blinksanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page9",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l1_background",
+          "fileName": "s3_p9_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l2_hippoconstellation",
+          "fileName": "s3_p9_l2_hippoconstellation.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l3_hippoconstellation",
+          "fileName": "s3_p9_l3_hippoconstellation.atlas",
+          "numFrames": "9",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p9_l3_hippoconstellationrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p9_l3_hippoconstellationanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l4_siphiwe",
+          "fileName": "s3_p9_l4_siphiwe.atlas",
+          "numFrames": "4",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p9_l4_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p9_l4_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l5_geckoconstellation",
+          "fileName": "s3_p9_l5_geckoconstellation.atlas",
+          "numFrames": "4",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p9_l5_geckoconstellationrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p9_l5_geckoconstellationanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p9_l6_text",
+          "fileName": "s3_p9_l6_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page10",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l1_background",
+          "fileName": "s3_p10_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l2_startwinkle",
+          "fileName": "s3_p10_l2_startwinkle.atlas",
+          "numFrames": "21",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p10_l2_startwinklerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p10_l2_startwinkleanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l3_starjoindots",
+          "fileName": "s3_p10_l3_starjoindots.atlas",
+          "numFrames": "26",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p10_l3_starjoindotsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p10_l3_starjoindotsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l4_geckoappears",
+          "fileName": "s3_p10_l4_geckoappears.atlas",
+          "numFrames": "15",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p10_l4_geckoappearsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p10_l4_geckoappearsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l5_siphiwe",
+          "fileName": "s3_p10_l5_siphiwe.atlas",
+          "numFrames": "15",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p10_l5_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p10_l5_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l6_blinks",
+          "fileName": "s3_p10_l6_blinks.atlas",
+          "numFrames": "3",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p10_l6_blinksrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p10_l6_blinksanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p10_l7_text",
+          "fileName": "s3_p10_l7_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page11",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l1_background",
+          "fileName": "s3_p11_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l2_siphiwe",
+          "fileName": "s3_p11_l2_siphiwe.atlas",
+          "numFrames": "16",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p11_l2_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p11_l2_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l3_constellation",
+          "fileName": "s3_p11_l3_constellation.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l4_gecko",
+          "fileName": "s3_p11_l4_gecko.atlas",
+          "numFrames": "20",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p11_l4_geckorepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p11_l4_geckoanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l5_text",
+          "fileName": "s3_p11_l5_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p11_l6_blinks",
+          "fileName": "s3_p11_l6_blinks.atlas",
+          "numFrames": "3",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p11_l6_blinksrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p11_l6_blinksanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page12",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l1_background",
+          "fileName": "s3_p12_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l2_startwinkle",
+          "fileName": "s3_p12_l2_startwinkle.atlas",
+          "numFrames": "19",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l2_startwinklerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l2_startwinkleanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l3_siphiwe",
+          "fileName": "s3_p12_l3_siphiwe.atlas",
+          "numFrames": "7",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l3_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l3_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l4_starjoindots",
+          "fileName": "s3_p12_l4_starjoindots.atlas",
+          "numFrames": "26",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l4_starjoindotsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l4_starjoindotsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l5_lionappears",
+          "fileName": "s3_p12_l5_lionappears.atlas",
+          "numFrames": "11",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l5_lionappearsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l5_lionappearsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l6_siphiwesmile",
+          "fileName": "s3_p12_l6_siphiwesmile.atlas",
+          "numFrames": "11",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l6_siphiwesmilerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l6_siphiwesmileanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l7_siphiwebows",
+          "fileName": "s3_p12_l7_siphiwebows.atlas",
+          "numFrames": "11",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l7_siphiwebowsrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l7_siphiwebowsanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l8_blinks",
+          "fileName": "s3_p12_l8_blinks.atlas",
+          "numFrames": "11",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p12_l8_blinksrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p12_l8_blinksanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p12_l9_text",
+          "fileName": "s3_p12_l9_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page13",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p13_l1_background",
+          "fileName": "s3_p13_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p13_l2_siphiwe",
+          "fileName": "s3_p13_l2_siphiwe.atlas",
+          "numFrames": "5",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p13_l2_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p13_l2_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p13_l3_lion",
+          "fileName": "s3_p13_l3_lion.atlas",
+          "numFrames": "4",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p13_l3_lionrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p13_l3_lionanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p13_l4_blinks",
+          "fileName": "s3_p13_l4_blinks.atlas",
+          "numFrames": "10",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p13_l4_blinksrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p13_l4_blinksanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p13_l5_text",
+          "fileName": "s3_p13_l5_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page14",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l1_background",
+          "fileName": "s3_p14_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l2_starfish",
+          "fileName": "s3_p14_l2_starfish.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p14_l2_starfishrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p14_l2_starfishanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l3_siphiwe",
+          "fileName": "s3_p14_l3_siphiwe.atlas",
+          "numFrames": "8",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p14_l3_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p14_l3_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l4_lionconstellation",
+          "fileName": "s3_p14_l4_lionconstellation.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l5_lion",
+          "fileName": "s3_p14_l5_lion.atlas",
+          "numFrames": "4",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p14_l5_lionrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p14_l5_lionanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p14_l6_text",
+          "fileName": "s3_p14_l6_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page15",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l1_background",
+          "fileName": "s3_p15_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_rightbutton",
+          "fileName": "s_xnav_rightbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "915",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navright_action",
+                      "type": "MoveToNextPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l2_starfishfloat",
+          "fileName": "s3_p15_l2_starfishfloat.atlas",
+          "numFrames": "7",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p15_l2_starfishfloatrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p15_l2_starfishfloatanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l3_bgfadein",
+          "fileName": "s3_p15_l3_bgfadein.atlas",
+          "numFrames": "12",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p15_l3_bgfadeinrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p15_l3_bgfadeinanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l4_siphiwe",
+          "fileName": "s3_p15_l4_siphiwe.atlas",
+          "numFrames": "12",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p15_l4_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p15_l4_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l5_waves",
+          "fileName": "s3_p15_l5_waves.atlas",
+          "numFrames": "12",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p15_l5_wavesrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p15_l5_wavesanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p15_l6_text",
+          "fileName": "s3_p15_l6_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "page16",
+      "elements": [
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l1_background",
+          "fileName": "s3_p16_l1_background.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_leftbutton",
+          "fileName": "s_xnav_leftbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "25",
+                  "originY": "25",
+                  "widthW": "85",
+                  "heightH": "55",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_navleft_action",
+                      "type": "MoveToPreviousPageActionData"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_endbutton",
+          "fileName": "s_xnav_endbutton.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s_xnav_home",
+          "fileName": "s_xnav_home.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "initial",
+                  "actions": []
+                },
+                {
+                  "type": "TouchEventData",
+                  "newstatename": "initial",
+                  "originX": "945",
+                  "originY": "690",
+                  "widthW": "50",
+                  "heightH": "50",
+                  "actions": [
+                    {
+                      "name": "play_pageturn_sequence",
+                      "type": "SequenceActionData",
+                      "actions": [
+                        {
+                          "name": "stop_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "true"
+                        },
+                        {
+                          "name": "play_pageturn",
+                          "type": "SoundActionData",
+                          "soundName": "pageturn",
+                          "stop": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "s2_p2_xnav_home",
+                      "type": "MoveToPageNumberActionData",
+                      "pageNumber": "0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l2_foreground",
+          "fileName": "s3_p16_l2_foreground.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l3_waves",
+          "fileName": "s3_p16_l3_waves.atlas",
+          "numFrames": "12",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p16_l3_wavesrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p16_l3_wavesanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l4_siphiwe",
+          "fileName": "s3_p16_l4_siphiwe.atlas",
+          "numFrames": "6",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p16_l4_siphiwerepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p16_l4_siphiweanimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l5_text",
+          "fileName": "s3_p16_l5_text.atlas",
+          "numFrames": "1",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": []
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "TextureData",
+          "name": "s3_p16_l6_shootingstar",
+          "fileName": "s3_p16_l6_shootingstar.atlas",
+          "numFrames": "4",
+          "states": [
+            {
+              "name": "initial",
+              "events": [
+                {
+                  "type": "PageLoadEventData",
+                  "newstatename": "final",
+                  "actions": [
+                    {
+                      "name": "s3_p16_l6_shootingstarrepeat",
+                      "type": "RepeatActionData",
+                      "repeat": "forever",
+                      "action": {
+                        "name": "s3_p16_l6_shootingstaranimation",
+                        "type": "AnimationActionData",
+                        "frameinterval": "0.2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "final",
+              "events": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ var logger = {
 		console.log(message);
 	},
 	debug: function(message) {
-		// console.log(message);
+	    console.log(message);
 	},
 	verbose: function(message) {
 		console.log(message);
@@ -16,6 +16,11 @@ var logger = {
 	}
 }
 
+var u = {
+	prettyJson: function (jObj) {
+		return JSON.stringify(jObj, null, '\t');
+	}
+}
 var AUTHOR = {
 	bookModel: undefined
 }
@@ -35,7 +40,7 @@ function parseBook(bookManifest) {
 	AUTHOR.bookModel = JSON.parse(fs.readFileSync(bookManifest));
 
 	logger.debug('================================');
-	logger.debug(JSON.stringify(AUTHOR.bookModel));
+	logger.debug(u.prettyJson(AUTHOR.bookModel));
 	logger.debug('================================');
 }
 
