@@ -78,8 +78,6 @@ logger.info('verb: ' + verb);
 var path = process.argv[4];
 logger.info('path: ' + path);
 
-var uPath = url.parse(path);
-logger.info(u.prettyJson(uPath));
 
 // GET /title
 // POST /title
