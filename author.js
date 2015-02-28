@@ -6,7 +6,7 @@ var logger = {
 		console.log(message);
 	},
 	debug: function(message) {
-	    console.log(message);
+	    // console.log(message);
 	},
 	verbose: function(message) {
 		console.log(message);
@@ -37,16 +37,19 @@ function parsePages(pagesManifest) {
 
 function parseBook(bookManifest) {
 	console.log('reading bookManifest=' + bookManifest, 'utf-8');
-	AUTHOR.bookModel = JSON.parse(fs.readFileSync(bookManifest));
+	var bookModel = JSON.parse(fs.readFileSync(bookManifest));
+	AUTHOR.bookModel = bookModel;
 
-	logger.debug('================================');
-	logger.debug(u.prettyJson(AUTHOR.bookModel));
-	logger.debug('================================');
+	logger.debug('========================');
+	logger.debug(u.prettyJson(bookModel));
+	logger.debug('========================');
+
+	var bookProps = ['title', 'sounds', 'pages'];
+	var i;
+	for (i = 0; i < bookProps.length; i++) {
+		logger.verbose(bookProps[i] + ': {..}');
+	}
 }
 
 var bookManifest = process.argv[2];
 parseBook(bookManifest);
-
-
-
-
