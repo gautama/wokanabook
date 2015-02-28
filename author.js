@@ -1,5 +1,7 @@
 var _ = require('underscore');
+_.str = require('underscore.string');
 var fs = require('fs');
+
 
 var logger = {
 	info: function(message) {
@@ -21,9 +23,13 @@ var u = {
 		return JSON.stringify(jObj, null, '\t');
 	}
 }
+
 var AUTHOR = {
-	bookModel: undefined
+	bookModel: undefined,
+	configModel: undefined
 }
+
+var bookProps = ['title', 'sounds', 'pages'];
 
 function parseTitle(title) {
 	logger.verbose('title: ' + AUTHOR.bookModel.title);
@@ -38,18 +44,43 @@ function parsePages(pagesManifest) {
 function parseBook(bookManifest) {
 	console.log('reading bookManifest=' + bookManifest, 'utf-8');
 	var bookModel = JSON.parse(fs.readFileSync(bookManifest));
-	AUTHOR.bookModel = bookModel;
 
 	logger.debug('========================');
 	logger.debug(u.prettyJson(bookModel));
 	logger.debug('========================');
 
-	var bookProps = ['title', 'sounds', 'pages'];
 	var i;
 	for (i = 0; i < bookProps.length; i++) {
 		logger.verbose(bookProps[i] + ': {..}');
 	}
+
+	return bookModel;
 }
 
-var bookManifest = process.argv[2];
-parseBook(bookManifest);
+function parseConfig(configManifest) {
+	console.log('reading bookConfig=' + configManifest, 'utf-8');
+	var configModel = JSON.parse(fs.readFileSync(configManifest));
+	AUTHOR.configModel = configModel;
+
+	logger.verbose('========================');
+	logger.verbose(u.prettyJson(configModel));
+	logger.verbose('========================');
+
+	return configModel;
+}
+
+var config = parseConfig(process.argv[2]);
+AUTHOR.bookModel = parseBook(config.manifest);
+
+var verb = process.argv[3];
+logger.info('verb: ' + verb);
+
+var path = process.argv[4];
+logger.info('path: ' + path);
+
+var uPath = url.parse(path);
+logger.info(u.prettyJson(uPath));
+
+// GET /title
+// POST /title
+
